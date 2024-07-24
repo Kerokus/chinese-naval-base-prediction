@@ -72,7 +72,7 @@ def input_data():
 
 
 def output_results(prediction):
-    st.header("Potential for Chinese interest:")
+    st.header("Potential for Chinese Naval Interest:")
     if prediction >= 0.5:
         st.write("Result: **True**")
     else:
