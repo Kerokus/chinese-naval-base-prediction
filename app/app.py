@@ -74,9 +74,11 @@ def input_data():
 def output_results(prediction):
     st.header("Potential for Chinese Naval Interest:")
     if prediction >= 0.5:
-        st.write("Result: **True**")
+        st.markdown('<p class="return true">TRUE</p>',
+                    unsafe_allow_html=True)
     else:
-        st.write("Result: **False**")
+        st.markdown('<p class="return false">FALSE</p>',
+                    unsafe_allow_html=True)
 
 
 def main():

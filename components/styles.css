@@ -1,3 +1,21 @@
 .title-text {
     text-align: center;
 }
+
+.return {
+    color: #fff;
+    padding: 0.2em 0.5em;
+    border-radius: 0.5em;
+}
+
+.return.true {
+    background-color: #ff4b4b;
+    color: black;
+    text-align: center;
+}
+
+.return.false {
+    background-color: #01DB4B;
+    color: black;
+    text-align: center;
+}
