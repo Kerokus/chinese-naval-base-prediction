@@ -46,6 +46,7 @@ def input_data():
         distance_to_nearest_population_center_km = st.number_input(
             "Distance to Nearest Population Center (km)", min_value=0.0, step=0.1)
 
+    # Putting the dropdowns in a separate column so it looks a bit cleaner.
     with col2:
         total_chinese_debt_unit = st.selectbox(
             "Unit", ["in millions", "in billions"], key="debt_unit")
@@ -53,6 +54,7 @@ def input_data():
             total_chinese_debt = total_chinese_debt_value * 1e9
         else:
             total_chinese_debt = total_chinese_debt_value * 1e6
+
         gdp_unit = st.selectbox(
             "Unit", ["in millions", "in billions"], key="gdp_unit")
         if gdp_unit == "in billions":
@@ -69,6 +71,9 @@ def input_data():
     }
 
     return input_data
+
+# We're storing what little styling we have in a CSS file
+# To keep things from getting too cluttered.
 
 
 def output_results(prediction):
@@ -87,7 +92,6 @@ def main():
         layout="wide"
     )
 
-    # We'll use a CSS file to try to keep this from getting too cluttered.
     with open("components/styles.css") as f:
         st.markdown("<style>{}</style>".format(f.read()),
                     unsafe_allow_html=True)
@@ -112,6 +116,9 @@ def main():
     with st.container():
         col1, col2 = st.columns([4, 1])
 
+    # This is where Streamlit is irritating. We need to save
+    # the prediction in state so we can pass it to col2. For
+    # some reason each column has its own scope.
     with col1:
         user_input = input_data()
         if st.button("Generate Prediction"):
