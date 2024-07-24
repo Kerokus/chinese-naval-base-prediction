@@ -2,6 +2,12 @@
 This script will import the model_data_updated.csv,
 clean up the columns, train the model, and export the model/scaler.
 These pickel files will be used for a Streamlit frontend later.
+
+NOTE: This is, for lack of a better term, a custom dataset. The data is 
+real, but I had to piece it together from several sources and I was unable
+to do so in an automated manner, so as a result the dataset is EXCEEDINGLY small.
+So much so, that I wouldn't trust this application as anything more than a proof
+of concept.
 """
 import pandas as pd
 from sklearn.preprocessing import StandardScaler

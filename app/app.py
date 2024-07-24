@@ -15,7 +15,6 @@ for China to potenially use for Naval purposes.
 import pickle
 import streamlit as st
 import pandas as pd
-import numpy as np
 
 
 # Loading the model and scaler
